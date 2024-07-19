@@ -70,7 +70,7 @@ margin-top:30px;
     grid-template-columns: auto auto auto;
     grid-template-rows: repeat(auto, minmax(0, 1fr));
     grid-gap: 10px;
-    
+    min-width: 300px; 
 }
 
   .gallery-item {
@@ -137,6 +137,13 @@ margin-top:30px;
     100% { transform: rotate(360deg); }
 }
 .loader {
-    display:flex;
-    align-items: flex-start;
-    justify-content:center;}
+  place-self: center;}
+
+  @media (max-width:600px) {
+    .gallery{grid-template-columns: auto auto;}
+    
+  }
+  @media (max-width:400px) {
+    .gallery{grid-template-columns: auto;}
+    
+  }
