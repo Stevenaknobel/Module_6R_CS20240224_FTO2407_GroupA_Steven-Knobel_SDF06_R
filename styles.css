@@ -9,6 +9,11 @@
 *::after {
     box-sizing: border-box;
 }
+.visually-hidden {display:none;
+}
+.container {display:grid;
+    grid-template-rows: auto;
+}
 
 body {
     font-family: "Open Sans", Arial, sans-serif;
@@ -21,3 +26,117 @@ body {
 img {
     display: block;
 }
+.profile {
+    display:flex;
+    align-items: flex-start;
+    justify-content:center;
+}
+.profile-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-user-settings {
+    display:flex;
+flex-wrap: nowrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.profile-stats ul {
+    margin:30px;
+    display:flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+}
+.profile-bio {margin: top 30px;
+}
+
+.gallery {
+    place-self: center;
+    display: grid;
+    width: auto;
+    max-width:900px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(auto, minmax(0, 1fr));
+    grid-gap: 10px;
+    
+}
+
+  .gallery-item {
+    position: relative;
+  }
+  
+  .gallery-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+  }
+  .gallery-image {
+    grid-area: gallery-image;
+    place-self: center;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+  .gallery-item-info {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .gallery-item-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+  .gallery-item:hover .gallery-image {
+    filter: brightness(40%);
+  }
+  
+  .gallery-item:hover .gallery-item-info {
+    opacity: 1;
+
+  }
+  
+  .gallery-item-info {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  .loader {flex: auto;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #000000;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loader {
+    display:flex;
+    align-items: flex-start;
+    justify-content:center;}
